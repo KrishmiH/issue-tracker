@@ -10,6 +10,7 @@ import Button from "../components/Button";
 import Badge from "../components/Badge";
 import EmptyState from "../components/EmptyState";
 import Skeleton from "../components/Skeleton";
+import { exportIssuesCSV, exportIssuesJSON } from "../utils/exporters";
 import {
   Plus,
   Search,
@@ -22,6 +23,7 @@ import {
   Lock,
   User,
   X,
+  Download,
 } from "lucide-react";
 
 function useDebounced(value, delay = 450) {
@@ -185,6 +187,23 @@ export default function Dashboard() {
                 <X className="h-4 w-4" /> Clear
               </Button>
             )}
+
+            {/* Export JSON & CSV buttons */}
+            <Button
+              variant="secondary"
+              onClick={() => exportIssuesJSON(items)}
+              className="col-span-2 sm:col-span-1"
+            >
+              <Download className="h-4 w-4" /> Export JSON
+            </Button>
+
+            <Button
+              variant="secondary"
+              onClick={() => exportIssuesCSV(items)}
+              className="col-span-2 sm:col-span-1"
+            >
+              <Download className="h-4 w-4" /> Export CSV
+            </Button>
 
             <Link to="/new" className="col-span-2 sm:col-span-1">
               <Button className="w-full">
