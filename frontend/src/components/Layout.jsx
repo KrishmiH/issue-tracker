@@ -25,7 +25,6 @@ export default function Layout({ title, children }) {
                 Issue Tracker
               </div>
               <div className="text-xs text-slate-600">
-                Modern • Clean • User Friendly
               </div>
             </div>
           </Link>
