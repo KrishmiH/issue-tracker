@@ -8,7 +8,16 @@ const issueRoutes = require("./routes/issue.routes");
 
 const app = express();
 
-app.use(cors());
+app.use(
+    cors({
+        origin: [
+        "http://localhost:5173",
+        process.env.FRONTEND_ORIGIN, // Vercel frontend URL
+        ].filter(Boolean),
+        credentials: true,
+    })
+);
+
 app.use(express.json());
 app.use(morgan("dev"));
 

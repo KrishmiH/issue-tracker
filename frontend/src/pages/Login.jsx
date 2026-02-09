@@ -4,6 +4,7 @@ import { useAuth } from "../auth/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
 import Card from "../components/Card";
 import Input from "../components/Input";
+import PasswordInput from "../components/PasswordInput";
 import Button from "../components/Button";
 import { ShieldCheck } from "lucide-react";
 
@@ -50,7 +51,7 @@ export default function Login() {
               <Input
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="you@example.com"
+                placeholder="Enter your email"
               />
             </div>
 
@@ -58,8 +59,7 @@ export default function Login() {
               <label className="text-sm font-medium text-slate-900">
                 Password
               </label>
-              <Input
-                type="password"
+              <PasswordInput
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"

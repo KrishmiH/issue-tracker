@@ -55,7 +55,7 @@ export default function NewIssue() {
           <div>
             <label className="text-sm font-medium text-slate-900">Title</label>
             <Input
-              placeholder="E.g., API returns 500 for /login"
+              placeholder="Title here"
               value={form.title}
               onChange={(e) => setForm((p) => ({ ...p, title: e.target.value }))}
             />
@@ -65,7 +65,7 @@ export default function NewIssue() {
             <label className="text-sm font-medium text-slate-900">Description</label>
             <Textarea
               rows={6}
-              placeholder="Describe steps to reproduce..."
+              placeholder="Description here"
               value={form.description}
               onChange={(e) => setForm((p) => ({ ...p, description: e.target.value }))}
             />
